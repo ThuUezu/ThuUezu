@@ -1,4 +1,4 @@
-<h1 align="center">Olá, eu sou o Arthur</h1>
+<h1 align="center">Olá, eu sou o Arthur Uezu</h1>
 
 <p align="center">
   <img alt="Desenvolvedor Full Stack Júnior" src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=1200&color=2F81F7&center=true&vCenter=true&width=640&lines=Desenvolvedor+Full+Stack+J%C3%BAnior;React+%C2%B7+Node.js+%C2%B7+TypeScript+%C2%B7+PostgreSQL;Buscando+est%C3%A1gio+ou+vaga+j%C3%BAnior">
