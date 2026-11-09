@@ -1,0 +1,40 @@
+name: Gerar animação da cobrinha
+
+on:
+  # Roda automaticamente todo dia à meia-noite
+  schedule:
+    - cron: "0 0 * * *"
+  
+  # Permite que você rode manualmente pela aba Actions
+  workflow_dispatch:
+  
+  # Roda a cada push na main
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    permissions: 
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    
+    steps:
+      # Gera a animação a partir das contribuições do usuário ThuUezu
+      - name: Gerar snake svg
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ThuUezu
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+
+      # Envia os arquivos gerados para a branch output
+      - name: Publicar na branch output
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
